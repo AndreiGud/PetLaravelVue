@@ -1,0 +1,29 @@
+.AppBody{
+    background: rgb(37 42 55 );
+    border: 3px solid rgb(37 42 55 );
+    border-radius: 15px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    background: rgb(23 25 35);
+    color: rgb(181 181 189 );
+}
+
+.router-link-a{
+    color: rgb(241, 65, 46);
+    text-decoration: underline;
+}
+.router-link-active{
+    color: rgb(115, 40, 50);
+    text-decoration: underline;
+}
+.router-link-exact-active{
+    color: rgb(241, 130, 126);
+    text-decoration: underline;
+}
+a {
+
+    color: rgb(220, 220, 220);
+    text-decoration: white;
+}

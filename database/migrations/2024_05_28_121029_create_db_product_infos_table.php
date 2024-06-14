@@ -8,12 +8,17 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     * Информация об продукте
      */
     public function up(): void
     {
-        Schema::create('db_item_stats', function (Blueprint $table) {
+        Schema::create('db_product_infos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description')->nullable();
+            $table->bigInteger('status');
+            $table->bigInteger('type_product')->nullable();
+            $table->bigInteger('cost')->nullable();
             $table->timestamps();
         });
     }
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('db_item_stats');
+        Schema::dropIfExists('db_product_infos');
     }
 };

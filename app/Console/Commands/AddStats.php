@@ -2,8 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Models\db_item_stat;
-use App\Models\User;
+
+
+use App\Http\Controllers\ProductCRUDController;
 use Illuminate\Console\Command;
 
 class AddStats extends Command
@@ -28,12 +29,7 @@ class AddStats extends Command
     public function handle()
     {
 
-        $name = $this->argument('name');
-        $NewId = db_item_stat::create([
-            'name' => $name,
-        ]);
-        $this->info('Id-'.$name);
-        $this->info($NewId);
+
 
     }
 }

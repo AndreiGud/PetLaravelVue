@@ -17,9 +17,10 @@ use App\Http\Controllers\CustomDEV;
 
 
 
-Route::get('/{vue_capture?}', function () {
+Route::match(['get', 'post', 'delete', 'patch'], '/{vue_capture}', function () {
     return view('welcome');
-})->where('vue_capture', '[\/\w\.-]*');
+})->where('vue_capture', '.*')->name('MainRoute');
+
 
 
 

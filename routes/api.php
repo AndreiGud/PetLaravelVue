@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductCRUDController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::apiResource('posts', 'PostController');
+
+
+Route::post('/create', [ProductCRUDController::class, 'create']);
+Route::get('/product', [ProductCRUDController::class, 'read']);
+Route::get('/product/{id}', [ProductCRUDController::class, 'read']);
+Route::patch('/product/{id}/update', [ProductCRUDController::class, 'update']);
+Route::delete('/product/{id}/delete', [ProductCRUDController::class, 'delete']);
+

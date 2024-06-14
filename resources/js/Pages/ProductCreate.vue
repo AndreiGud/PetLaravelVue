@@ -1,20 +1,14 @@
 <script setup>
 
-
-import { useRoute, useRouter } from 'vue-router'
 import NavMenu from "../Components/NavMenu.vue";
-
-const router = useRouter()
-const route = useRoute()
-
-
-
+import FormCreateProduct from "../Components/FormCreateProduct.vue";
 
 </script>
 
 <template>
-    <h1>Index</h1>
+    <h1>Создать</h1>
     <NavMenu></NavMenu>
+    <FormCreateProduct></FormCreateProduct>
 </template>
 
 <style scoped>

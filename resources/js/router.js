@@ -1,18 +1,33 @@
 import { createRouter, createWebHistory } from "vue-router";
+import Index from './Pages/Index.vue';
+import ProductCreate from './Pages/ProductCreate.vue';
+import ProductList from "./Pages/ProductList.vue";
+import ProductEdit from "./Pages/ProductEdit.vue";
 
 const routes = [
     {
-    path: "/",
-    component: () => import("./Pages/Index.vue"),
+        path: "/",
+        name: 'index',
+        component: Index,
 },
     {
-        path: "/test",
-        component: () => import("./Pages/TestHome.vue"),
+        path: "/product/create",
+        name: 'product_create',
+        component: ProductCreate,
     },
     {
-        path: "/app",
-        component: () => import("./Pages/NewComponent.vue"),
-    }];
+        path: "/product/list",
+        name: 'product_list',
+        component: ProductList,
+    },
+    {
+        path: "/product/:id/edit",
+        name: 'product_edit',
+        component: ProductEdit,
+    },
+
+
+];
 
 export default createRouter({
     history: createWebHistory(),
