@@ -38,6 +38,9 @@ onMounted(() => { GetData() });
             <th>
                 Статус
             </th>
+            <th>
+                Стоимость
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -47,6 +50,7 @@ onMounted(() => { GetData() });
             <td>{{ data.name }}</td>
             <td>{{ data.description }}</td>
             <td>{{ data.status }}</td>
+            <td>{{ data.cost }}</td>
 
         </tr>
         </tbody>

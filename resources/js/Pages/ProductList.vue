@@ -34,6 +34,9 @@ onMounted(() => { GetData() });
             <th>
                 Статус
             </th>
+            <th>
+                Стоимость
+            </th>
         </tr>
         </thead>
         <tbody>
@@ -43,6 +46,7 @@ onMounted(() => { GetData() });
             <td>{{ item.name }}</td>
             <td>{{ item.description }}</td>
             <td>{{ item.status }}</td>
+            <td>{{ item.cost }}</td>
             <td> <router-link :to="{ name: 'product_edit', params: { id: item.id} }">Редактировать</router-link> </td>
 
         </tr>

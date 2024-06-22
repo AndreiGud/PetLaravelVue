@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->bigInteger('status');
             $table->bigInteger('type_product')->nullable();
-            $table->bigInteger('cost')->nullable();
+            $table->decimal('cost')->nullable();
             $table->timestamps();
         });
     }

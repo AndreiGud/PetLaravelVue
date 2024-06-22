@@ -6,6 +6,7 @@ const formdata = reactive({
     name:'',
     description:'',
     status: 0,
+    cost: 0,
     }
 )
 
@@ -14,16 +15,16 @@ function Submit() {
         name: formdata.name,
         description: formdata.description,
         status: formdata.status,
+        cost: formdata.cost,
     }).then(
         () => {
             formdata.name = '';
             formdata.description = '';
             formdata.status = 0;
+            formdata.cost = 0;
         }
     )
 }
-
-
 </script>
 
 <template>
@@ -39,13 +40,15 @@ function Submit() {
         <br><br>
         <div>Создать с статусом: {{ formdata.status }}</div>
 
-        <select v-model="formdata.status">
+        <select v-model.number="formdata.status">
             <option disabled value="">Выберите один из вариантов</option>
             <option>0</option>
             <option>1</option>
             <option>2</option>
         </select>
         <br><br>
+        <div>Установить стоимость: {{ formdata.cost }}</div>
+        <input v-model="formdata.cost" value="0"><br><br>
         <input type="submit" value="Создать">
     </form>
 

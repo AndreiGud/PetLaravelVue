@@ -9,6 +9,7 @@ const formdata = reactive({
     name:'',
     description:'',
     status: 0,
+    cost: 0,
     }
 )
 
@@ -16,7 +17,8 @@ function Submit() {
     axios.patch('/api/product/'+props.data.id+'/update', {
         name: formdata.name,
         description: formdata.description,
-        status: formdata.status
+        status: formdata.status,
+        cost: Number (formdata.cost)
     }).then(
         () => {
             router.push({ name: 'product_list'})
@@ -24,6 +26,7 @@ function Submit() {
             formdata.name = '';
             formdata.description = '';
             formdata.status = 0;
+            formdata.cost = 0;
         }
     )
 }
@@ -38,6 +41,8 @@ function Delete(){
         }
     )
 }
+
+
 </script>
 
 <template>
@@ -46,20 +51,23 @@ function Delete(){
         <p>Название: {{ data.name }}</p>
         <input v-model="formdata.name" placeholder="Введите новое название продукта" />
         <br><br>
-        <span>Описание:</span>
+        <span>Описание: </span>
         <span style="white-space: pre-line;">{{ data.description }}</span>
         <br>
         <textarea v-model="formdata.description" placeholder="Введите новое описание"></textarea>
         <br><br>
-        <div>Обновить на статус: {{ data.status }}</div>
+        <div>Обновить текущий статус: {{ data.status }}</div>
 
-        <select v-model="formdata.status">
+        <select v-model.number="formdata.status">
             <option disabled value="">Выберите один из вариантов</option>
             <option>0</option>
             <option>1</option>
             <option>2</option>
         </select>
         <br><br>
+        <div>Установить стоимость: {{ formdata.cost }}</div>
+        <input v-model.number="formdata.cost" value="0"><br><br>
+
         <input type="submit" value="Обновить">
     </form>
     <br><br>
