@@ -1,5 +1,7 @@
-## Why you read
-<p> Dont Read Me </p>
+## Read me
+
+
+## PHP: 8.1
 
 ## Active DEV packages
 devDependencies
@@ -12,7 +14,23 @@ devDependencies
 
 <li>"vite": "^5.2.11",</li>
 
+<li>"vue": "^3.4.27",</li>
+
 <li>"vue-router": "^4.3.2"</li>
 </ul>
+
+## Что сделано в проекте
+SPA страницы с созданием обновлением\удалением просмотром продукта.
+
+Минимум в CSS классов стилей
+
+Vue на Composition API 
+
+Получение данных из БД через axios. При загрузке компонента.
+
+Endpont`ы для axios указаны в api.php
+
+## Разработка заморожена
+
 
 
